@@ -86,7 +86,7 @@ namespace NLog.Targets.ElasticSearch
             foreach (var logEvent in logEvents)
             {
                 var document = new Dictionary<string, object>();
-                document.Add("@timestamp", logEvent.TimeStamp);
+                document.Add("timeStamp", logEvent.TimeStamp);
                 document.Add("level", logEvent.Level.Name);
                 if (logEvent.Exception != null)
                     document.Add("exception", logEvent.Exception.ToString());
